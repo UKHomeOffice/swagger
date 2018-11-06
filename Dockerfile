@@ -28,8 +28,9 @@ COPY ./docker/configurator /usr/share/nginx/configurator
 
 RUN chmod +x /usr/share/nginx/run.sh
 RUN mkdir -p /var/cache/nginx
+RUN touch /var/run/nginx.pid
 
-RUN chown -R swagger:swagger /usr/share/nginx /etc/nginx /var/cache/nginx
+RUN chown -R swagger:swagger /usr/share/nginx /etc/nginx /var/cache/nginx /var/run/nginx.pid
 
 USER 1000
 
